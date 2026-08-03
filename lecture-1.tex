@@ -6,6 +6,7 @@
 \usepackage[a4paper, margin=1in]{geometry}
 
 \usepackage{lipsum}
+\usepackage{multicol}
 
 \input{version}
 
@@ -88,6 +89,13 @@ and note here that the sum does not terminate.
     The coefficient of \(x^3\) in the expansion of \(\pqty{1 + 2x + 3 x^2}^6\) is equal to twice the coefficient of \(x^4\) in the expansion of \(\pqty{1 - a x^2}^5\). Find all possible values of the constant \(a\).
 \end{example}
 
+\begin{problem}
+    Try proving the binomial theorem. Hint: prove and use the identity
+    \[
+        \binom{n + 1}{k} = \binom{n}{k} + \binom{n}{k - 1}.
+    \]  
+\end{problem}
+
 \section{Exponents}
 
 \[
@@ -145,6 +153,10 @@ Laws of logarithms can be deduced from laws of indices:
     \log_a b = \frac{\log_c b}{\log_c a}.
 \]
 
+\begin{problem}
+    Is their an equivalent version of change of base formula in exponentiation? How to prove the logarithm change of base formula?
+\end{problem}
+
 \begin{example}[TMUA 2016 P1 Q16]
     Given the simultaneous equations
     \begin{align*}
@@ -187,6 +199,14 @@ Quick trick:
         \item \(4 \sin^2 \pqty{\flatfrac{\pi}{4}}\)
     \end{enumerate}
 \end{example}
+
+\begin{problem}
+    Find what is wrong with the following proof.
+
+    \[
+        1 = \sqrt{1} = \sqrt{\pqty{-1} \pqty{-1}} = \sqrt{-1} \sqrt{-1} = i^2 = -1.
+    \]  
+\end{problem}
 
 \section{Quadratic Functions and Quadratic Equations}
 \subsection{Quadratic Formula}
@@ -246,6 +266,19 @@ Proof is by quadratic formula (very disgusting), or by factorisation. We have
     a x^2 + bx + c = a \pqty{x - x_1} \pqty{x - x_2}
 \]
 and expanding the brackets gives us the result.
+
+\begin{example}
+    Let \(x_1, x_2\) be the two real roots for the equation \(x^2 - 4x + 1 = 0\). Find:
+    \begin{itemize}
+        \item \(x_1^2 + x_2^2\);
+        \item \(x_1^3 + x_2^3\);
+        \item \(x_1^4 + x_2^4\).
+    \end{itemize}
+\end{example}
+
+\begin{example}
+    Let \(x_1, x_2\) be the two real roots for the equation \(x^2 - \pqty{k - 2} x + \pqty{k^2 + 3k + 10} = 0\). Find the largest values of \(x_1^2 + x_2^2\).
+\end{example}
 
 \begin{example}[TMUA 2016 P2 Q15]
     Consider the quadratic \(f\pqty{x} = x^2 - 2px + q\) and the statement \(f\pqty{x} = 0\) has two real roots whose difference is greater than \(2\) and less than \(4\).
@@ -416,6 +449,20 @@ Together with monotonicity, we may assert that such \(c\) is in fact unique.
         \item \(\pqty{p, q, r, s} = \pqty{1, 4, 3, 2}\),
         \item \(\pqty{p, q, r, s} = \pqty{2, 4, 3, 1}\),
         \item \(\pqty{p, q, r, s} = \pqty{4, 3, 2, 1}\).
+    \end{enumerate}
+\end{example}
+
+\begin{example}[TMUA 2017 P2 Q19]
+    Which one of the following is a sufficient condition for the equation \(x^3 - 3 x^2 + a = 0\), where \(a\) is a constant, to have exactly one real root?
+    \begin{enumerate}
+        \item \(a > 0\)
+        \item \(a \leq 0\)
+        \item \(a \geq 4\)
+        \item \(a < 4\)
+        \item \(\abs{a} > 4\)
+        \item \(\abs{a} \leq 4\)
+        \item \(a = \frac{9}{4}\)
+        \item \(\abs{a} = \frac{3}{2}\)
     \end{enumerate}
 \end{example}
 
