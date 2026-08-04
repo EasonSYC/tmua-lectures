@@ -26,3 +26,9 @@ jobs:
         with:
           job-name: ${{ github.event.repository.name }}-lecture-1
           input-file: lecture-1.tex
+
+      - name: Compile PDF - Lecture 2
+        uses: EasonSYC/latex-compile-pdf@main
+        with:
+          job-name: ${{ github.event.repository.name }}-lecture-2
+          input-file: lecture-2.tex
