@@ -162,7 +162,7 @@ In an arithmetic sequence, the average/mean of some evenly spaced terms is the m
 
 Because of the averaging properties, we also have
 \[
-    S_{2n} = 2n \cdot \frac{a_n + a_{n + 1}}{2} = n \pqty{a_n + a_{n + 1}} \qand S_{2n + 1} = \pqty{2n + 1} = a_{n + 1}.
+    S_{2n} = 2n \cdot \frac{a_n + a_{n + 1}}{2} = n \pqty{a_n + a_{n + 1}} \qand S_{2n + 1} = \pqty{2n + 1} a_{n + 1}.
 \]
 
 \begin{example}
@@ -213,7 +213,7 @@ for all \(n \geq 1\), for some (fixed) \(a\) and \(r\). \(a\) is the \textbf{fir
     \frac{a_2}{a_1} = \frac{a_3}{a_2} = \cdots = \frac{a_{n + 1}}{a_n} = \cdots = r.
 \]
 
-We may see that \(\flatfrac{a_m}{a_n} = r^{m 0 n}\), and hence, if \(m + n = p + q\), then
+We may see that \(\flatfrac{a_m}{a_n} = r^{m - n}\), and hence, if \(m + n = p + q\), then
 \[
     a_m a_n = a_p a_q.
 \]
@@ -271,10 +271,10 @@ The only derivative you are required to know is \(x^n\) which differentiates to 
 \begin{example}[TMUA 2016 P2 Q2]
     Let
     \[
-        f\pqty{x} = \frac{\pqty{x^2 + 5} \pqty{2x}}{\sqrt[4]{3}} \qfor x > 0.
+        f\pqty{x} = \frac{\pqty{x^2 + 5} \pqty{2x}}{\sqrt[4]{x^3}} \qfor x > 0.
     \]  
 
-    Find \(f'\pqty{x}\)?
+    Find \(f'\pqty{x}\).
 \end{example}
 
 \begin{example}[TMUA 2017 P1 Q2]
