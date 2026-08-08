@@ -1,5 +1,5 @@
-# latex-template
+# tmua-lectures
 
-[![LaTeX Compile PDF](https://github.com/EasonSYC/latex-template/actions/workflows/compile-pdf.yml/badge.svg)](https://github.com/EasonSYC/latex-template/actions/workflows/compile-pdf.yml)
+[![LaTeX Compile PDF](https://github.com/EasonSYC/tmua-lectures/actions/workflows/compile-pdf.yml/badge.svg)](https://github.com/EasonSYC/tmua-lectures/actions/workflows/compile-pdf.yml)
 
-Template for using my LaTeX Style File.
+Lectures I prepared for TMUA.
