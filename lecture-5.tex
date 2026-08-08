@@ -1,0 +1,296 @@
+\documentclass{article}
+\usepackage{eason}
+
+\usepackage{pdfpages}
+
+\usepackage[a4paper, margin=1in]{geometry}
+
+\usepackage{lipsum}
+\usepackage{multicol}
+
+\input{version}
+
+\title{TMUA Lecture 5 -- Graphs of Functions and Miscellaneous Questions}
+\author{Eason Shao}
+\date{v.\DATE.\COMMITSHA}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{Functions and Graphs}
+\subsection{Definitions}
+
+For two sets \(A\) and \(B\), a \textbf{function}
+\[
+    \function{f}{A}{B}{x}{f\pqty{x}}
+\]
+is a relation where it maps \textbf{every} value \(a \in A\) to some \textbf{unique} value in \(b \in B\).
+
+\begin{problem}
+    How do we formalise this definition of a function?
+\end{problem}
+
+The set \(A\) is called its \textbf{domain} and the set \(B\) is called its \textbf{co-domain} (or range). In TMUA, we always have \(B = \RR\) and \(A\) being a nice subset of \(\RR\) (i.e., a union of intervals).
+
+The set
+\[
+    \set{y \in B}{\exists x \in A: f\pqty{x} = y} = \set{f\pqty{x}}{x \in A}
+\]
+is the \textbf{image} or \textbf{range} of \(f\) (note the dual-use of the word range with different meanings). It is the set of values in the co-domain that the function can take.
+
+The \textbf{vertical line test} tests whether some graph (of a relation) is a function or not.
+
+\begin{example}
+    Determine if \(x = y^3\) and \(x = y^2\) are functions.
+\end{example}
+
+\begin{problem}
+    What is the point of having the co-domain in the definition?
+\end{problem}
+
+A function is \textbf{one-to-one}, or \textbf{injective}, if for all \(a \neq b\) in its domain, we have
+\[
+    f\pqty{a} \neq f\pqty{b}.
+\]
+
+Otherwise, we say a function is \textbf{many-to-one}.
+
+The \textbf{horizontal line test} tests whether some graph (of a function) is one-to-one or many-to-one.
+
+\begin{example}
+    Determine if \(y = x^2\) and \(y = x\) are one-to-one or many-to-one.
+\end{example}
+
+\subsection{Properties of Functions}
+\subsubsection{Monotonicity}
+
+A function \(f\) is \textbf{increasing} on a interval \(\ccintv{a}{b}\) (which must be entirely inside its domain), if for all \(a \leq x_1 \leq x_2 \leq b\), we have
+\[
+    f\pqty{x_1} \leq f\pqty{x_2}.
+\]
+
+Changing \(f\pqty{x_1} \geq f\pqty{x_2}\) gives the definition of a \textbf{decreasing} function.
+
+Recall from definition that we may use \(f'\) to see whether a function is increasing or decreasing.
+
+\subsubsection{Parity}
+
+If a function's domain is symmetric about the origin, we may discuss the \textbf{parity} of a function.
+
+A function \(f\) is \textbf{odd} if
+\[
+    f\pqty{x} = - f\pqty{-x},
+\]
+and is \textbf{even} if
+\[
+    f\pqty{x} = f\pqty{-x}.
+\]
+
+The words odd and even come from the powers of \(x\) -- the function \(x\) raised to an even/odd power is even/odd.
+
+\begin{remark}
+    You may sometimes hear people refer to this as \textit{``odevity''} (in China) -- this is \textbf{not a proper terminology}.
+\end{remark}
+
+The most important application of odd/even functions is in integration. If \(f\) is odd, then
+\[
+    \int_{-a}^{a} f\pqty{x} \dd{x} = 0
+\]
+and if \(f\) is even, then
+\[
+    \int_{-a}^{a} f\pqty{x} \dd{x} = 2 \int_{0}^{a} f\pqty{x} \dd{x}.
+\]
+
+Note a function can be neither even nor odd, or both even and odd.
+
+\begin{example}
+    If \(f\) is a function defined on \(\RR\) and is both even and odd, what is \(f\)?
+\end{example}
+
+\subsubsection{Periodicity}
+
+For a function \(f\) defined on \(\RR\), we say some real number \(T \neq 0\) is a \textbf{period} of \(f\), if
+\[
+    f \pqty{x + T} = f \pqty{x}
+\]
+for all \(x\). If such \(T\) exists, we say \(f\) is \textbf{periodic}.
+
+If we refer to \textbf{the period} of a function, we mean the \textbf{least positive period} (which does not necessarily exist).
+
+For example, the \(\sin\) function has all \(2 k \pi\) for \(k \neq 0\) and \(k \in \ZZ\) as its period, but \textbf{the period} of \(\sin\) is \(2 \pi\).
+
+\begin{problem}
+    A constant function is periodic but it does not have the least positive period. Can you find a non-constant function with this property?
+\end{problem}
+
+\subsubsection{Symmetry}
+
+We say a function \(f\) is \textbf{symmetric} about the line \(x = a\), if
+\[
+    f\pqty{a + x} = f\pqty{a - x}
+\]  
+for all \(x\). Equivalently, this could be written as
+\[
+    f\pqty{x} = f\pqty{2a - x}
+\]
+for all \(x\).
+
+This gives the integration property
+\[
+    \int_{a - x}^{a + x} f\pqty{x} = 0.
+\]
+
+A function \(f\) is \textbf{rotationally symmetric by \(180 \degree\)} about a point \(\pqty{a, f\pqty{a}}\), if
+\[
+    f\pqty{a + x} = - f\pqty{a - x}
+\]
+for all \(x\). Equivalently, this could be written as
+\[
+    f\pqty{x} = - f\pqty{2a - x}
+\]
+for all \(x\).
+
+This gives the integration property
+\[
+    \int_{a - x}^{a + x} f\pqty{x} = 2 \int_{a}^{a + x} f\pqty{x}.
+\]
+
+\textbf{Note parity is a special case of symmetry where \(a = 0\).}
+
+\begin{example}
+    Integrate
+    \[
+        \int_{0}^{4} x \pqty{x - 1} \pqty{x - 2} \pqty{x - 3} \pqty{x - 4} \dd{x}.
+    \]
+\end{example}
+
+\subsection{Graphs of Common Functions}
+
+\textbf{Linear, Quadratic, Polynomials, Trigonometric} -- see previous lectures.
+
+The \textbf{absolute value} or \textbf{modulus function} \(y = \abs{x}\) is defined as
+\[
+    y = \abs{x} = \begin{cases}
+        x & \qif x \geq 0, \\
+        -x & \qif x < 0.
+    \end{cases}
+\]
+
+The \textbf{square root function} \(y = \sqrt{x}\) is \textbf{only defined on} \(x \geq 0\) and has range \(y \geq 0\).
+
+Let \(a > 0\). \textbf{Exponential functions} are functions of the form
+\[
+    f\pqty{x} = a^x \qqtext{where} a > 0,
+\]
+and \textbf{logarithmic functions} are their inverses, \(f\inverse\pqty{x} = \log_a x\) for \(a \neq 1\).
+
+The graphs differ for the cases \(0 < a < 1\) (in which case both are decreasing), \(a = 1\) (in which the logarithm does not exist) and \(a > 1\) (in which case both are increasing) -- \textbf{be very careful of the differing monotonic properties}.
+
+\subsection{Graph Transformations}
+
+\begin{itemize}
+    \item \textbf{The graph of \(\abs{f\pqty{x}}\)} is formed by:
+        \begin{itemize}
+            \item sketching \(y = f\pqty{x}\); then
+            \item reflecting the graph below the \(x\)-axis (\(y < 0\)) in the \(x\)-axis, removing the original.
+        \end{itemize}
+
+    \item \textbf{The graph of \(f\pqty{\abs{x}}\)} is formed by:
+        \begin{itemize}
+            \item sketching \(y = f\pqty{x}\) for \(x \geq 0\); then
+            \item reflecting the graph to the right of \(y\)-axis (\(x > 0\)) in the \(y\)-axis, keeping the original.
+        \end{itemize}
+
+    \item \textbf{The graph of \(f\pqty{x + a}\)} is formed by translating the graph of \(y = f\pqty{x}\) by \(a\) units in the \textbf{negative \(x\)-direction}.
+    \item \textbf{The graph of \(f\pqty{x} + a\)} is formed by translating the graph of \(y = f\pqty{x}\) by \(a\) units in the \textbf{positive \(y\)-direction}.
+    \item \textbf{The graph of \(f\pqty{ax}\)} is formed by stretching the graph of \(y = f\pqty{x}\) \textbf{in the \(x\)-axis by a scale factor of \(\flatfrac{1}{a}\)}.
+    \item \textbf{The graph of \(a f\pqty{x}\)} is formed by stretching the graph of \(y = f\pqty{x}\) \textbf{in the \(y\)-axis by a scale factor of \(a\)}.
+        
+\end{itemize}
+
+\begin{example}
+    Sketch the following functions:
+    \begin{multicols}{3}
+        \begin{itemize}
+            \item \(\abs{x^2 - 4}\)
+            \item \(\abs{\sin x}\)
+            \item \(3 - \abs{x}\)
+            \item \(e^{\abs{x}}\)
+            \item \(2^{x + 1}\)
+            \item \(\sin\pqty{x + \frac{\pi}{6}}\)
+            \item \(x^3 + 3\)
+            \item \(\cos x - 2\)
+            \item \(\sqrt{2x}\)
+            \item \(\sin \pqty{3x}\)
+            \item \(5 \cos x\)
+            \item \(- \frac{1}{2} \sqrt{x}\)
+        \end{itemize}
+    \end{multicols}
+\end{example}
+
+\begin{example}[TMUA 2017 P1 Q18]
+    The graph of \(y = \log_{10} x\) is translated in the positive \(y\)-direction by \(2\) units/ This translation is equivalent to a stretch of factor \(k\) parallel to the \(x\)-axis. Find \(k\).
+\end{example}
+
+\begin{example}[MAT 2014 Question I]
+    The graph of the function
+    \[
+        y = 2^{x^2 - 4x + 3}
+    \]
+    can be obtained from the graph of \(y = 2^{x^2}\) by
+    \begin{enumerate}[label=(\alph*)]
+        \item a stretch parallel to the \(y\)-axis followed by a translation parallel to the \(y\)-axis.
+        \item a translation parallel to the \(x\)-axis followed by a stretch parallel to the \(y\)-axis.
+        \item a translation parallel to the \(x\)-axis followed by a stretch parallel to the \(x\)-axis.
+        \item a translation parallel to the \(x\)-axis followed by reflection in the \(y\)-axis.
+        \item reflection in the \(y\)-axis followed by translation parallel to the \(y\)-axis.
+    \end{enumerate}
+\end{example}
+
+\subsection{Application of Graphs of Functions}
+
+Previously, we have seen the application of using graphs of functions to solve (qualitatively) a system of inequalities.
+
+We may also use graphs to solve a system of equations: the intersections of graphs correspond to solutions to the original system of equations.
+
+Similarly, the intersections of the graphs of \(f\) and \(g\) solve the equation \(f\pqty{x} = g\pqty{x}\). (Sometimes, we re-arrange the functions \(f\) and \(g\) to make the graph-sketching easier.)
+
+\begin{example}[TMUA 2016 P1 Q10]
+    How many solutions does the equation \(x \tan x = 1\) have in the interval \(-2 \pi \leq x \leq 2\pi\)?
+\end{example}
+
+\section{Miscellaneous Questions}
+
+\subsection{Ratios}
+
+Key idea: set the total to be \(1\) (or \(10\), or \(100\)).
+
+\begin{example}[TMUA 2016 P1 Q6]
+    \(P\), \(Q\) and \(R\) are each mixtures of red and white paint. The percentage by volume of red paint in \(P\) is \(\SI{30}{\percent}\). The percentage by volume of red paint in \(Q\) is \(\SI{20}{\percent}\).
+
+    The mixtures \(P\), \(Q\) and \(R\) are combined in the proportion \(12 : 5 : 3\) respectively.
+
+    If the resulting mixture contains \(\SI{25}{\percent}\) by volume of red paint, what percentage by volume of mixture \(R\) is red paint?
+\end{example}
+
+\begin{example}[TMUA 2016 P1 Q7]
+    \(\SI{60}{\percent}\) of a sports club's members are women and the remainder are men. This sports club offers the opportunity to play tennis or cricket. Every member plays exactly one of the two sports.
+
+    \(\flatfrac{2}{5}\) of the male members of the club play cricket; \(\flatfrac{2}{3}\) of the cricketing members of the club are women.
+
+    What is the probability that a member of the club, chosen at random, is a woman who plays tennis?
+\end{example}
+
+\subsection{Logical Deduction}
+
+\begin{example}[TMUA 2017 P2 Q20]
+    I have forgotten my \(5\)-character computer password, but I know that it consists of the letters \texttt{a}, \texttt{b}, \texttt{c}, \texttt{d}, \texttt{e} in some order. When I enter a potential password into the computer, it tells me exactly how many of the letters are in the correct position.
+
+    When I enter \texttt{abcde}, it tells me that none of the letters are in the correct position. The same happens when I enter \texttt{cdbea} and \texttt{eadbc}.
+
+    Using the best strategy, how many \textbf{further} attempts must I make in order to \textbf{guarantee} that I can \textbf{deduce} the correct password?
+\end{example}
+
+\end{document}
