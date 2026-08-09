@@ -51,17 +51,17 @@ Two statements are \textbf{logically equivalent} if they have the same truth val
     Five sealed urns, labelled \(P\), \(Q\), \(R\), \(S\), and \(T\), each contain the \textbf{same} (non-zero) number of balls. The following statements are attached to the urns.
 
     \begin{itemize}
-        \item \textbf{Urn P.} This urn contains one or four balls.
-        \item \textbf{Urn Q.} This urn contains two or four balls.
-        \item \textbf{Urn R.} This urn contains more than two balls and fewer than five balls.
-        \item \textbf{Urn S.} This urn contains one and two balls.
-        \item \textbf{Urn T.} This urn contains fewer than three balls.
+        \item \textbf{Urn \(P\).} This urn contains one or four balls.
+        \item \textbf{Urn \(Q\).} This urn contains two or four balls.
+        \item \textbf{Urn \(R\).} This urn contains more than two balls and fewer than five balls.
+        \item \textbf{Urn \(S\).} This urn contains one or two balls.
+        \item \textbf{Urn \(T\).} This urn contains fewer than three balls.
     \end{itemize}
 
     Exactly one of the urns has a true statement attached to it. Which urn is it?
 \end{example}
 
-\subsection{Combining Statements -- And, Or, Not}
+\subsection{And, Or, Not}
 
 If we have two statements \(A\) and \(B\), we may combine them using certain logical symbols:
 \begin{itemize}
@@ -117,9 +117,9 @@ are all equivalent, and denoted \(A \implies B\) or \(B \implies A\). The result
             \item \(x^2 = 9\) if \(x = -3\),
             \item \(x = -3\) only if \(x^2 = 9\),
             \item \(x = -3\) implies \(x^2 = 9\),
-            \item \(x^2 = 9\) implies \(x = -3\),
+            \item \(x^2 = 9\) is implied by \(x = -3\),
             \item \(x = -3\) is a sufficient condition for \(x^2 = 9\),
-            \item \(x^2 = 9\) is a sufficient condition for \(x = -3\)
+            \item \(x^2 = 9\) is a necessary condition for \(x = -3\)
         \end{itemize}
     \end{multicols}
 \end{example}
@@ -128,6 +128,8 @@ The statements
 \begin{itemize}
     \item \textbf{\(A\) if and only if \(B\)},
     \item \textbf{\(B\) if and only if \(A\)},
+    \item \textbf{\(A\) is necessary and sufficient for \(B\)},
+    \item \textbf{\(B\) is necessary and sufficient for \(A\)},
     \item \textbf{\(A\) and \(B\) are equivalent}
 \end{itemize}
 are all equivalent. This is denoted \(A \iff B\).
@@ -177,7 +179,7 @@ It is often useful to think about implication using set notation. Suppose \(S\) 
 \end{example}
 
 \begin{example}[TMUA 2017 P2 Q10]
-    \(f\pqty{x}\) is a function defined for all real values of \(x\). Which one of the following is a \textbf{sufficient} conditions for \(\int_1^3 f\pqty{x} \dd{x} = 0\)?
+    \(f\pqty{x}\) is a function defined for all real values of \(x\). Which one of the following is a \textbf{sufficient} condition for \(\int_1^3 f\pqty{x} \dd{x} = 0\)?
 
     \begin{multicols}{2}
         \begin{enumerate}[label=\Alph*.]
@@ -313,14 +315,18 @@ We learnt above how to negate individual statements. Negating very long, combine
     Negating the statement ``for all \(x\), there exists \(y\) such that \(y > x\)'' gives ``there exists \(x\) such that for all \(y\), \(y \leq x\)''.
 \end{example}
 
-\begin{example}[Numbers and Sets, Exmaple Sheet 1 (2025), Q5 (i)]
+\begin{example}[Numbers and Sets, Example Sheet 1 (2025), Q5 (i)]
     Let \(a, b, m, n \in \NN\). Negate the statement
     \[
-        \forall m \exists n \forall a \forall b \pqty{n \geq m} \land \bqty{\pqty{a = 1} \lor \pqty{b = 1} \lor \pqty{ab \neq n}}
+        \forall m \exists n \forall a \forall b: \pqty{n \geq m} \land \bqty{\pqty{a = 1} \lor \pqty{b = 1} \lor \pqty{ab \neq n}}
     \]
 \end{example}
 
-\begin{example}[Numbers and Sets, Exmaple Sheet 1 (2025), Q5 (ii)]
+\begin{problem}
+    What is this statement saying?
+\end{problem}
+
+\begin{example}[Numbers and Sets, Example Sheet 1 (2025), Q5 (ii)]
     Negate the statement: if Bumrah is not a faster bowler than Tait, then Australia is worse than England in cricket.
 \end{example}
 
@@ -376,12 +382,12 @@ giving the proof.
 
 \subsection{Contradiction}
 
-\textbf{Proof by contradiction} of a statement of a form \(A \implies B\) is done by assuming \(\lnot B\), and using logical deduction to reach a result that contradicts with \(A\), i.e., we prove \(\not \pqty{A \land \pqty{\lnot B}}\) This is precisely proving the negation of the implication cannot be true.
+\textbf{Proof by contradiction} of a statement of a form \(A \implies B\) is done by assuming \(\lnot B\), and using logical deduction to reach a result that contradicts with \(A\), i.e., we prove \(\lnot \pqty{A \land \pqty{\lnot B}}\) This is precisely proving the negation of the implication cannot be true.
 
 Concretely speaking, to prove some statement \(A\), we:
 \begin{itemize}
     \item start by assuming not \(A\) is true;
-    \item logical deducting to two contradicting statements, \(B\) and \(\not B\);
+    \item logical deducting to two contradicting statements, \(B\) and \(\lnot B\);
     \item therefore our assumption not \(A\) is true must therefore be false;
     \item finally concluding that \(A\) must be true.
 \end{itemize}
@@ -392,7 +398,7 @@ Concretely speaking, to prove some statement \(A\), we:
 
 \subsection{Contraposition}
 
-Recall a statement \(A \implies B\) is logically equivalent to \(\pqty{\not B} \implies \pqty{\not A}\). \textbf{Proof by contraposition} proves a statement of the form \(A \implies B\) by proving its contrapositive, an equivalent statement.
+Recall a statement \(A \implies B\) is logically equivalent to \(\pqty{\lnot B} \implies \pqty{\lnot A}\). \textbf{Proof by contraposition} proves a statement of the form \(A \implies B\) by proving its contrapositive, an equivalent statement.
 
 \subsection{Casework}
 
@@ -403,6 +409,12 @@ Recall a statement \(A \implies B\) is logically equivalent to \(\pqty{\not B} \
 \end{example}
 
 \subsection{Counterexample}
+
+To disprove a statement of the form
+\[
+    \forall x \in S: A\pqty{x} \implies B\pqty{x},
+\]
+we may find some \(x \in S\), such that \(A\pqty{x}\) is \textbf{true} but \(B\pqty{x}\) is \textbf{false}. This is called a \textbf{counterexample}.
 
 \begin{example}[TMUA 2016 P2 Q5]
     Consider the statement: a number \(n\) is prime if it is \(1\) less or \(5\) less than a multiple of \(6\).
@@ -447,10 +459,10 @@ TMUA asks us to identify errors in a proof given. The following is a list of com
         \item The nwe can write \(x^2 = xy\).
         \item Subtracting \(y^2\) from both sides gives \(x^2 - y^2 = xy - y^2\).
         \item Factorising gives \(\pqty{x + y} \pqty{x - y} = y \pqty{x - y}\).
-        \item Therefore, dividing by \(\pqty{x - y}\) gives \(\pqty{x + y = y}\).
+        \item Therefore, dividing by \(\pqty{x - y}\) gives \(x + y = y\).
         \item As \(x = y\), we have \(2y = y\).
         \item Dividing by the non-zero \(y\), we have \(2 = 1\).
-        \item Subtracting \(1\) from both sides, we hae \(1 = 0\).
+        \item Subtracting \(1\) from both sides, we have \(1 = 0\).
     \end{itemize}
 \end{example}
 
