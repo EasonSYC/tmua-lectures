@@ -139,22 +139,26 @@ for all \(x\).
 
 This gives the integration property
 \[
-    \int_{a - x}^{a + x} f\pqty{x} = 0.
+    \int_{a - x}^{a + x} f\pqty{x} \dd{x} = 2 \int_{a}^{a + x} f\pqty{x} \dd{x}.
 \]
 
 A function \(f\) is \textbf{rotationally symmetric by \(180 \degree\)} about a point \(\pqty{a, f\pqty{a}}\), if
 \[
-    f\pqty{a + x} = - f\pqty{a - x}
+    f\pqty{a + x} - f\pqty{a} = f\pqty{a} - f\pqty{a - x}
 \]
 for all \(x\). Equivalently, this could be written as
 \[
-    f\pqty{x} = - f\pqty{2a - x}
+    f\pqty{a + x} + f\pqty{a - x} = 2 f\pqty{a},
+\]
+or
+\[
+    f\pqty{x} + f\pqty{2a - x} = 2 f\pqty{a}
 \]
 for all \(x\).
 
 This gives the integration property
 \[
-    \int_{a - x}^{a + x} f\pqty{x} = 2 \int_{a}^{a + x} f\pqty{x}.
+    \int_{a - x}^{a + x} f\pqty{x} \dd{x} = 2 f\pqty{a} x.
 \]
 
 \textbf{Note parity is a special case of symmetry where \(a = 0\).}
@@ -231,7 +235,7 @@ The graphs differ for the cases \(0 < a < 1\) (in which case both are decreasing
 \end{example}
 
 \begin{example}[TMUA 2017 P1 Q18]
-    The graph of \(y = \log_{10} x\) is translated in the positive \(y\)-direction by \(2\) units/ This translation is equivalent to a stretch of factor \(k\) parallel to the \(x\)-axis. Find \(k\).
+    The graph of \(y = \log_{10} x\) is translated in the positive \(y\)-direction by \(2\) units. This translation is equivalent to a stretch of factor \(k\) parallel to the \(x\)-axis. Find \(k\).
 \end{example}
 
 \begin{example}[MAT 2014 Question I]
